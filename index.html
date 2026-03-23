@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filles.ai — La communauté IA au féminin pluriel</title>
-  <meta name="description" content="Filles.ai — La communauté mondiale de l'intelligence artificielle au féminin. Bientôt disponible." />
+  <meta name="description" content="Filles.ai — La communauté mondiale de l'intelligence artificielle au féminin." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
   <style>
@@ -15,7 +15,6 @@
       --amber:  #f97316;
       --cream:  #fef3c7;
       --dark:   #07060e;
-      --surface:#0f0e1a;
       --glass:  rgba(255,255,255,0.03);
       --border: rgba(255,255,255,0.07);
       --text:   #f5f0e8;
@@ -45,14 +44,12 @@
     }
     .blob-1 { width: 800px; height: 800px; background: var(--amber); top: -300px; right: -200px; animation: drift 20s ease-in-out infinite alternate; }
     .blob-2 { width: 500px; height: 500px; background: var(--gold); bottom: -100px; left: -150px; animation: drift 25s ease-in-out infinite alternate-reverse; }
-    .blob-3 { width: 300px; height: 300px; background: #e879f9; top: 50%; left: 30%; animation: drift 16s ease-in-out infinite alternate; }
-
     @keyframes drift { from{transform:translate(0,0)} to{transform:translate(30px,25px)} }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 24px 64px;
+      padding: 24px 56px;
       display: flex; align-items: center; justify-content: space-between;
       background: linear-gradient(to bottom, rgba(7,6,14,0.95), transparent);
     }
@@ -63,9 +60,6 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       letter-spacing: 0.01em;
     }
-    .nav-right {
-      display: flex; align-items: center; gap: 20px;
-    }
     .nav-badge {
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--gold);
@@ -74,53 +68,66 @@
       background: rgba(245,158,11,0.05);
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       position: relative; z-index: 1;
       min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 48px 80px;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(245,158,11,0.06) 0%, transparent 70%);
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 120px 56px 80px;
+      gap: 56px;
     }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 32px;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
     }
-    .hero-eyebrow span {
-      width: 40px; height: 1px; background: var(--gold); opacity: 0.5;
-    }
+    .hero-eyebrow span { width: 36px; height: 1px; background: var(--gold); opacity: 0.5; }
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 700; line-height: 0.95;
       letter-spacing: -0.02em;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
-    h1 .line1 { display: block; color: rgba(255,255,255,0.25); font-style: italic; font-size: 0.6em; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400; margin-bottom: 0.2em; font-family: 'Inter', sans-serif; font-size: clamp(0.9rem, 2vw, 1.4rem); letter-spacing: 0.3em; }
     h1 .gradient {
-      background: linear-gradient(135deg, #fff 0%, var(--gold) 45%, var(--amber) 100%);
+      background: linear-gradient(135deg, #fff 0%, var(--gold) 50%, var(--amber) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       display: block;
     }
+    h1 .sub {
+      display: block; color: rgba(255,255,255,0.3);
+      font-style: italic; font-size: 0.55em;
+      font-weight: 400; margin-bottom: 0.15em;
+    }
 
     .hero-desc {
-      font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7;
-      color: var(--muted); max-width: 560px; margin: 0 auto 48px;
+      font-size: 1rem; line-height: 1.75;
+      color: var(--muted); margin-bottom: 20px; max-width: 460px;
     }
 
-    .hero-actions {
-      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    .domain-line {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 40px; flex-wrap: wrap;
     }
+    .domain-badge {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      color: #22c55e;
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .domain-badge-no {
+      font-size: 0.68rem; font-weight: 600;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 4px 12px; border-radius: 100px;
+      text-decoration: line-through;
+    }
+
     .btn-gold {
       display: inline-flex; align-items: center; gap: 10px;
       background: linear-gradient(135deg, var(--gold), var(--amber));
@@ -132,461 +139,127 @@
       letter-spacing: 0.02em;
     }
     .btn-gold:hover { opacity: 0.9; transform: translateY(-2px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 10px;
-      color: var(--gold); font-size: 0.88rem; font-weight: 600;
-      padding: 14px 28px; border-radius: 12px;
-      border: 1px solid rgba(245,158,11,0.25);
-      text-decoration: none; transition: all 0.2s;
-      background: rgba(245,158,11,0.04);
-    }
-    .btn-outline:hover { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.4); }
 
-    /* scroll indicator */
-    .scroll-hint {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 1px; height: 48px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollAnim 2s ease-in-out infinite;
-    }
-    @keyframes scrollAnim { 0%,100%{opacity:0.3;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(0.6)} }
-
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      position: relative; z-index: 1;
-      overflow: hidden; padding: 32px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: rgba(245,158,11,0.03);
-    }
-    .marquee-track {
-      display: flex; gap: 48px; width: max-content;
-      animation: marquee 30s linear infinite;
-    }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .marquee-item {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600; font-style: italic;
-      color: rgba(245,158,11,0.4); white-space: nowrap;
-      display: flex; align-items: center; gap: 48px;
-    }
-    .marquee-item::after { content: '✦'; font-style: normal; font-size: 0.6rem; }
-
-    /* ── STATS ── */
-    .stats-section {
-      position: relative; z-index: 1;
-      padding: 80px 80px;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-      background: var(--border);
-    }
-    .stat-cell {
-      background: var(--dark);
-      padding: 48px 40px; text-align: center;
-    }
-    .stat-val {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--gold), var(--amber));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      line-height: 1;
-    }
-    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 10px; letter-spacing: 0.05em; }
-
-    /* ── FEATURES ── */
-    .features-section {
-      position: relative; z-index: 1;
-      padding: 100px 80px;
-      display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: start;
-    }
-    .features-list { display: flex; flex-direction: column; gap: 0; }
-    .feature-row {
-      display: flex; gap: 24px; align-items: flex-start;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .feature-row:first-child { border-top: 1px solid var(--border); }
-    .feature-row:hover { background: rgba(245,158,11,0.02); padding-left: 8px; }
-    .feature-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem; font-weight: 700;
-      color: rgba(245,158,11,0.15); line-height: 1;
-      min-width: 56px;
-    }
-    .feature-row-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-    .feature-row-content p { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
-
-    .features-side {
-      position: sticky; top: 120px;
-    }
-    .features-side-img {
-      border-radius: 20px; overflow: hidden;
-      aspect-ratio: 3/4;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-      border: 1px solid var(--border);
-    }
-    .features-side-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: saturate(0.8);
-    }
-
-    /* ── DOMAIN ── */
-    .domain-section {
-      position: relative; z-index: 1;
-      padding: 100px 80px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .domain-left {}
-    .section-label-gold {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px;
-    }
-    .domain-left h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem); font-weight: 700;
-      line-height: 1.15; margin-bottom: 28px;
-    }
-    .domain-left h2 em { font-style: italic; color: var(--gold); }
-    .domain-left p { color: var(--muted); font-size: 0.92rem; line-height: 1.75; margin-bottom: 20px; }
-
-    .domain-right {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      overflow: hidden;
-    }
-    .domain-header {
-      padding: 32px; border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    .domain-big {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--cream), var(--gold), var(--amber));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .domain-sub { font-size: 0.72rem; color: var(--muted); margin-top: 6px; letter-spacing: 0.08em; text-transform: uppercase; }
-    .domain-rows { padding: 8px 0; }
-    .domain-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 28px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.86rem;
-    }
-    .domain-row:last-child { border-bottom: none; }
-    .domain-row-name { color: var(--muted); }
-    .domain-row-status { font-weight: 700; }
-    .ok { color: #22c55e; }
-    .no { color: #f87171; }
-    .na { color: #6b7280; }
-
-    /* ── GALLERY ── */
-    .gallery-section {
-      position: relative; z-index: 1;
-      padding: 60px 80px 100px;
-    }
-    .gallery-header { text-align: center; margin-bottom: 48px; }
-    .gallery-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700;
-    }
-    .gallery-mosaic {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 14px;
-    }
-    .gallery-mosaic .gi {
-      border-radius: 16px; overflow: hidden;
+    /* HERO IMAGES */
+    .hero-images {
       position: relative;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      align-items: end;
+    }
+    .img-wrap {
+      border-radius: 18px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
       border: 1px solid var(--border);
+      position: relative;
     }
-    .gallery-mosaic .gi img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: saturate(0.8) brightness(0.9);
-      transition: transform 0.5s, filter 0.4s;
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .img-wrap-main { aspect-ratio: 2/3; }
+    .img-wrap-side { aspect-ratio: 3/5; margin-bottom: 32px; }
+    .img-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(7,6,14,0.45) 0%, transparent 55%);
     }
-    .gallery-mosaic .gi:hover img { transform: scale(1.06); filter: saturate(1) brightness(0.95); }
-    .gallery-mosaic .gi::after {
-      content:''; position:absolute; inset:0;
-      background: linear-gradient(135deg, rgba(245,158,11,0.05), transparent);
-    }
-    .gi-main { grid-row: span 2; min-height: 480px; }
-    .gi-sm { height: 220px; }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     .contact-section {
       position: relative; z-index: 1;
-      padding: 100px 80px;
+      padding: 80px 56px 100px;
     }
     .contact-inner {
       background: var(--glass);
       border: 1px solid var(--border);
       border-radius: 28px;
-      padding: 72px;
+      padding: 64px 72px;
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .contact-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
     }
     .contact-inner h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700;
-      line-height: 1.2; margin-bottom: 20px;
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem); font-weight: 700;
+      line-height: 1.15; margin-bottom: 16px;
     }
     .contact-inner h2 em { color: var(--gold); font-style: italic; }
-    .contact-inner p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-    .contact-right { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+    .contact-inner p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+    .contact-right { display: flex; flex-direction: column; gap: 20px; }
     .contact-email-wrap {
-      width: 100%;
       background: rgba(245,158,11,0.05);
       border: 1px solid rgba(245,158,11,0.15);
       border-radius: 16px; padding: 28px 32px;
     }
-    .contact-hint { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .contact-hint { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
     .contact-email {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem; font-weight: 700;
       background: linear-gradient(135deg, var(--gold), var(--amber));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: block; text-decoration: none;
     }
-    .contact-note { font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
+    .contact-note { font-size: 0.75rem; color: var(--muted); margin-top: 10px; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       position: relative; z-index: 1;
-      padding: 32px 80px;
+      padding: 28px 56px;
       border-top: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
-      color: var(--muted); font-size: 0.78rem;
+      color: var(--muted); font-size: 0.75rem;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1000px) {
-      .stats-section { grid-template-columns: repeat(2,1fr); }
-      .features-section, .domain-section, .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 32px; }
-      .features-side { display: none; }
-      .gallery-mosaic { grid-template-columns: 1fr 1fr; }
-      .gi-main { grid-row: span 1; min-height: 300px; grid-column: span 2; }
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 100px 28px 60px; gap: 40px; }
+      .hero-images { order: -1; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
+      nav { padding: 20px 24px; }
+      .contact-section { padding: 60px 24px; }
+      footer { padding: 24px 28px; flex-direction: column; gap: 10px; text-align: center; }
     }
-    @media (max-width: 700px) {
-      nav { padding: 18px 24px; }
-      .hero { padding: 100px 24px 80px; }
-      .stats-section { grid-template-columns: repeat(2,1fr); padding: 0; }
-      .gallery-mosaic { grid-template-columns: 1fr; }
-      .gi-main { grid-column: span 1; }
-      .gallery-section { padding: 40px 24px 60px; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
-      .contact-inner { padding: 36px 24px; }
+    @media (max-width: 540px) {
+      .img-wrap-side { display: none; }
+      .hero-images { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
 
   <!-- NAV -->
   <nav>
     <div class="logo">filles.ai</div>
-    <div class="nav-right">
-      <div class="nav-badge">En construction</div>
-    </div>
+    <div class="nav-badge">En construction</div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">
-      <span></span>
-      Plateforme communautaire
-      <span></span>
-    </div>
-    <h1>
-      <span class="line1">Des filles. De l'IA.</span>
-      <span class="gradient">filles.ai</span>
-    </h1>
-    <p class="hero-desc">
-      La première communauté mondiale où les femmes rencontrent l'intelligence artificielle.
-      Créatrices, entrepreneures, visionnaires — réunies sous un seul domaine.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:domain@filles.ai" class="btn-gold">✦ Rejoindre la liste</a>
-      <a href="#concept" class="btn-outline">Découvrir →</a>
-    </div>
-    <div class="scroll-hint">
-      <div class="scroll-line"></div>
-      Défiler
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee-track">
-      <!-- duplicate for seamless loop -->
-      <span class="marquee-item">Intelligence Artificielle</span>
-      <span class="marquee-item">Communauté Féminine</span>
-      <span class="marquee-item">filles.ai</span>
-      <span class="marquee-item">Créativité & IA</span>
-      <span class="marquee-item">Technologie au Féminin</span>
-      <span class="marquee-item">Extension .ai officielle</span>
-      <span class="marquee-item">Intelligence Artificielle</span>
-      <span class="marquee-item">Communauté Féminine</span>
-      <span class="marquee-item">filles.ai</span>
-      <span class="marquee-item">Créativité & IA</span>
-      <span class="marquee-item">Technologie au Féminin</span>
-      <span class="marquee-item">Extension .ai officielle</span>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats-section">
-    <div class="stat-cell">
-      <div class="stat-val">51%</div>
-      <div class="stat-label">des utilisateurs IA sont des femmes</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-val">$1Md+</div>
-      <div class="stat-label">de valeur créée par les femmes dans la tech</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-val">.ai</div>
-      <div class="stat-label">la seule extension IA qui existe vraiment</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-val">∞</div>
-      <div class="stat-label">possibilités avec le bon domaine</div>
-    </div>
-  </div>
-
-  <!-- FEATURES -->
-  <section class="features-section" id="concept">
-    <div class="features-list">
-      <div class="section-label-gold" style="margin-bottom:24px">Ce que filles.ai rend possible</div>
-      <div class="feature-row">
-        <div class="feature-num">01</div>
-        <div class="feature-row-content">
-          <h3>Un réseau social propulsé par l'IA</h3>
-          <p>Connexions intelligentes, recommandations personnalisées, mise en relation de talents féminins à l'échelle mondiale.</p>
-        </div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-num">02</div>
-        <div class="feature-row-content">
-          <h3>Studio créatif intégré</h3>
-          <p>Génération d'images, de vidéos, de textes — un atelier créatif complet directement dans la plateforme.</p>
-        </div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-num">03</div>
-        <div class="feature-row-content">
-          <h3>Mentorat augmenté</h3>
-          <p>Un système d'IA qui met en relation les mentores et les mentorées selon des critères ultra-précis de compatibilité.</p>
-        </div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-num">04</div>
-        <div class="feature-row-content">
-          <h3>Marketplace de talents</h3>
-          <p>Trouvez, recrutez, collaborez. Un vivier de talents féminins vérifiés et valorisés par l'intelligence artificielle.</p>
-        </div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-num">05</div>
-        <div class="feature-row-content">
-          <h3>Formation & Certification</h3>
-          <p>Des parcours d'apprentissage adaptatifs pour maîtriser l'IA, de la débutante à l'experte en technologie.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="features-side">
-      <div class="features-side-img">
-        <img
-          src="img/side.jpg"
-          alt="filles.ai"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- DOMAIN -->
-  <section class="domain-section">
-    <div class="domain-left">
-      <div class="section-label-gold">L'avantage du domaine</div>
-      <h2>Pourquoi <em>filles.ai</em><br/>est irremplaçable</h2>
-      <p>
-        En informatique et sur internet, l'extension officielle de l'intelligence artificielle
-        est <strong style="color:var(--text)">.ai</strong> — et non .ia, qui n'existe tout simplement pas comme
-        domaine de premier niveau reconnu.
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span></span>Plateforme communautaire<span></span></div>
+      <h1>
+        <span class="sub">Des filles. De l'IA.</span>
+        <span class="gradient">filles.ai</span>
+      </h1>
+      <p class="hero-desc">
+        La première communauté mondiale où les femmes rencontrent l'intelligence artificielle.
+        Créatrices, entrepreneures, visionnaires — sous un seul domaine.
       </p>
-      <p>
-        Cela signifie que <strong style="color:var(--gold)">filles.ai</strong> est le meilleur
-        domaine possible pour toute marque ou plateforme IA en langue française.
-        Court, mémorable, catégorique : il dit exactement ce qu'il est.
-      </p>
-      <p>
-        Des noms comme <strong style="color:var(--text)">mistral.ai</strong>, <strong style="color:var(--text)">perplexity.ai</strong>
-        ou <strong style="color:var(--text)">eleven.ai</strong> valent des dizaines de millions.
-        filles.ai est dans cette même catégorie de noms parfaits.
-      </p>
-    </div>
-    <div class="domain-right">
-      <div class="domain-header">
-        <div class="domain-big">filles.ai</div>
-        <div class="domain-sub">Domaine de premier niveau · Enregistré</div>
+      <div class="domain-line">
+        <span class="domain-badge">✓ filles.ai</span>
+        <span class="domain-badge-no">filles.ia</span>
+        <span style="font-size:0.7rem;color:var(--muted)">· .ia n'existe pas comme TLD</span>
       </div>
-      <div class="domain-rows">
-        <div class="domain-row">
-          <span class="domain-row-name">filles.ai</span>
-          <span class="domain-row-status ok">✓ Enregistré</span>
-        </div>
-        <div class="domain-row">
-          <span class="domain-row-name">filles.ia</span>
-          <span class="domain-row-status no">✗ N'existe pas</span>
-        </div>
-        <div class="domain-row">
-          <span class="domain-row-name">filles.com</span>
-          <span class="domain-row-status no">✗ Pris</span>
-        </div>
-        <div class="domain-row">
-          <span class="domain-row-name">filles.fr</span>
-          <span class="domain-row-status no">✗ Pris</span>
-        </div>
-        <div class="domain-row">
-          <span class="domain-row-name">Extension IA officielle</span>
-          <span class="domain-row-status ok">✓ .ai uniquement</span>
-        </div>
-        <div class="domain-row">
-          <span class="domain-row-name">Mémorable & court</span>
-          <span class="domain-row-status ok">✓ 8 caractères</span>
-        </div>
-      </div>
+      <a href="mailto:domain@filles.ai" class="btn-gold">✦ Prendre contact</a>
     </div>
-  </section>
 
-  <!-- GALLERY -->
-  <section class="gallery-section">
-    <div class="gallery-header">
-      <div class="section-label-gold">Vision</div>
-      <h2>L'esthétique de la communauté</h2>
-    </div>
-    <div class="gallery-mosaic">
-      <div class="gi gi-main">
-        <img src="img/gallery-main.jpg" alt="filles.ai" />
+    <div class="hero-images">
+      <div class="img-wrap img-wrap-main">
+        <img src="img/hero.jpg" alt="filles.ai" loading="eager" />
       </div>
-      <div class="gi gi-sm">
-        <img src="img/gallery1.jpg" alt="" />
-      </div>
-      <div class="gi gi-sm">
-        <img src="img/gallery2.jpg" alt="" />
-      </div>
-      <div class="gi gi-sm">
-        <img src="img/gallery3.jpg" alt="" />
-      </div>
-      <div class="gi gi-sm">
-        <img src="img/gallery4.jpg" alt="" />
+      <div class="img-wrap img-wrap-side">
+        <img src="img/gallery1.jpg" alt="filles.ai" loading="eager" />
       </div>
     </div>
   </section>
@@ -595,21 +268,21 @@
   <section class="contact-section">
     <div class="contact-inner">
       <div>
-        <div class="section-label-gold">Prendre contact</div>
+        <div class="contact-label">Prendre contact</div>
         <h2>Une idée ?<br/>Une <em>collaboration</em> ?</h2>
         <p>
-          Pour toute demande de partenariat, d'investissement ou d'information
+          Pour toute demande de partenariat, d'acquisition ou d'information
           sur le projet filles.ai, notre équipe est disponible.
-          Nous sommes en phase pré-lancement et ouverts aux discussions sérieuses.
+          Nous sommes ouverts aux discussions sérieuses.
         </p>
       </div>
       <div class="contact-right">
         <div class="contact-email-wrap">
           <div class="contact-hint">Contactez l'équipe</div>
           <a href="mailto:domain@filles.ai" class="contact-email">domain@filles.ai</a>
-          <div class="contact-note">Réponse garantie sous 24h · Équipe disponible en 🇫🇷 &amp; 🇬🇧</div>
+          <div class="contact-note">Réponse sous 24h · Équipe disponible en 🇫🇷 &amp; 🇬🇧</div>
         </div>
-        <a href="mailto:domain@filles.ai" class="btn-gold" style="align-self:stretch;justify-content:center">
+        <a href="mailto:domain@filles.ai" class="btn-gold" style="justify-content:center">
           Envoyer un message →
         </a>
       </div>
@@ -619,7 +292,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="logo" style="font-size:1.2rem">filles.ai</div>
-    <div>La communauté IA au féminin — en développement</div>
+    <div>La communauté IA au féminin</div>
     <div>© 2026 filles.ai</div>
   </footer>
 </body>
