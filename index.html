@@ -151,8 +151,8 @@
 
     .hero-images {
       position: relative;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-      height: calc(100vh - 148px);
+      display: grid; grid-template-columns: 1fr; gap: 12px;
+      height: 70vh;
     }
     .img-wrap {
       border-radius: 18px; overflow: hidden;
@@ -160,8 +160,8 @@
       border: 1px solid var(--border);
       position: relative; height: 100%;
     }
-    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .img-wrap-side { margin-top: 60px; height: calc(100% - 60px); }
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .img-wrap-side { margin-top: 0; height: 100%; }
     .img-wrap::after {
       content: '';
       position: absolute; inset: 0;
@@ -171,7 +171,7 @@
     @media (max-width: 900px) {
       html, body { overflow: auto; }
       .hero { height: auto; min-height: 100vh; grid-template-columns: 1fr; padding: 100px 28px 60px; gap: 40px; }
-      .hero-images { height: 50vh; grid-template-columns: 1fr 1fr; }
+      .hero-images { height: 55vh; grid-template-columns: 1fr; }
       nav { padding: 20px 24px; }
     }
     @media (max-width: 540px) {
@@ -208,11 +208,7 @@
       </form>
     </div>
 
-    <div class="hero-images">
-      <div class="img-wrap img-wrap-main">
-        <img src="img/hero.jpg" alt="filles.ai" loading="eager" />
-      </div>
-      <div class="img-wrap img-wrap-side">
+    <div class="hero-images">      <div class="img-wrap img-wrap-side">
         <img src="img/gallery1.jpg" alt="filles.ai" loading="eager" />
       </div>
     </div>
