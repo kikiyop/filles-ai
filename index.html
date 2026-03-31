@@ -68,15 +68,15 @@
     .pill {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--violet);
-      background: rgba(168,85,247,0.12);
-      border: 1px solid rgba(168,85,247,0.3);
+      color: #4ade80;
+      background: rgba(74,222,128,0.12);
+      border: 1px solid rgba(74,222,128,0.3);
       padding: 7px 16px; border-radius: 100px;
       margin-bottom: 20px;
     }
     .pill::before {
       content: ''; width: 6px; height: 6px;
-      background: var(--violet); border-radius: 50%;
+      background: #4ade80; border-radius: 50%;
       animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
@@ -119,6 +119,7 @@
     .contact-form {
       display: flex; flex-direction: column; gap: 12px;
       width: 100%; max-width: 400px;
+      margin-top: 32px;
     }
     .contact-form input,
     .contact-form textarea {
@@ -196,7 +197,7 @@
       </h1>
       <form class="contact-form" action="mailto:contact@internet.fr" method="post" enctype="text/plain">
         <input type="email" name="Email" placeholder="Votre adresse email" required />
-        <textarea name="Message" rows="4" placeholder="Votre message" required></textarea>
+        <textarea name="Message" rows="4" placeholder="Votre proposition" required></textarea>
         <button type="submit" class="btn-primary">✦ Envoyer</button>
       </form>
     </div>
